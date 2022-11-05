@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Form, Input, Button, Alert, } from 'antd';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,11 +25,6 @@ export function LoginPage() {
     const auth = useSelector(selectAuthentication);
     const dispatch: AppDispatch = useDispatch();
     let navigate = useNavigate();
-    useEffect(() => {
-        if (auth.accessToken) {
-            navigate('/home');
-        }
-    }, [auth.accessToken])
 
 
     const onFinish = (values: { username: string, password: string }) => {
@@ -37,7 +32,7 @@ export function LoginPage() {
         dispatch(authenticateUser(values)).unwrap()
             .then(() => {
                 setLoading(false)
-                navigate("/home");
+                navigate("/");
                 window.location.reload();
             })
             .catch(() => {
@@ -46,7 +41,7 @@ export function LoginPage() {
     };
 
     if (auth.isLoggedIn) {
-        return <Navigate to="/home" />;
+        return <Navigate to="/" />;
     }
     else
         return (
