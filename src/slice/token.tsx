@@ -55,7 +55,6 @@ export const authenticateUser = createAsyncThunk(
   async ({ username, password }: any, thunkAPI) => {
     try {
       thunkAPI.dispatch(start())
-      console.log(username)
       const authData = await authService.login(username, password)
       tokenService.setUser(authData.token);
       successMessage("welcome")
