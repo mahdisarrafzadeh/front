@@ -83,7 +83,7 @@ export function LoginPage() {
                             Or <a href="">register now!</a>
                         </Form.Item>
                         <Form.Item>
-                            <Alert message={`Username:"eve.holt@reqres.in"    Password:"cityslicka"`} type="info" />
+                            <Alert message={`Username:"eve.holt@reqres.in"/    Password:"cityslicka"`} type="info" />
                         </Form.Item>
 
                     </Form>
