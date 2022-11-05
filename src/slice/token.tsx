@@ -28,13 +28,13 @@ export const authenticationSlice = createSlice({
         isProcessingRequest: true,
       };
     },
-    success: (state, action: PayloadAction<any>) => {
+    success: (state) => {
       return {
         ...state,
         isLoggedIn: true,
       };
     },
-    error: (state, action: PayloadAction<any>) => {
+    error: (state) => {
       return {
         ...state,
         isLoggedIn: false,
