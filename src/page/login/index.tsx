@@ -77,7 +77,7 @@ export function LoginPage() {
                             />
                         </Form.Item>
                         <Form.Item>
-                            <Button loading={loading} shape='round' type="primary" htmlType="submit" className="login-form-button">
+                            <Button loading={loading} block shape='round' type="primary" htmlType="submit" className="login-form-button">
                                 Log in
                             </Button>
                             Or <a href="">register now!</a>
