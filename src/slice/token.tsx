@@ -25,13 +25,14 @@ export const authenticationSlice = createSlice({
     start: (state) => {
       return {
         ...state,
-        isProcessingRequest: true,
+        isLoggedIn: false,
       };
     },
-    success: (state) => {
+    success: (state, action: PayloadAction<any>) => {
       return {
         ...state,
         isLoggedIn: true,
+        accessToken: action.payload
       };
     },
     error: (state) => {
