@@ -32,8 +32,8 @@ export function LoginPage() {
         dispatch(authenticateUser(values)).unwrap()
             .then(() => {
                 setLoading(false)
-                navigate("/");
                 window.location.reload();
+                navigate("/home");
             })
             .catch(() => {
                 setLoading(false);
@@ -41,7 +41,7 @@ export function LoginPage() {
     };
 
     if (auth.isLoggedIn) {
-        return <Navigate to="/" />;
+        return <Navigate to="/home" />;
     }
     else
         return (

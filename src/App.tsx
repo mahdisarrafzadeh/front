@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <PrivateRoute>
                 <Home />
@@ -19,7 +19,7 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>
     </div>

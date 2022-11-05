@@ -1,11 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Route, Navigate, useLocation } from 'react-router-dom';
-import { selectToken } from '../slice/token';
+import { Navigate, useLocation } from 'react-router-dom';
+import tokenService from '../services/token.service';
 
 export const PrivateRoute = ({ children }: any) => {
     let history: any = useLocation();
-    const token = useSelector(selectToken)
+    const token = tokenService.getUser();
     if (!token) {
         // not logged in so redirect to login page with the return url
         return <Navigate to="/login" state={{ from: history.location }} />
