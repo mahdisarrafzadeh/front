@@ -1,4 +1,5 @@
 import axios from "axios";
+import tokenService from "./token.service";
 
 const API_URL = "https://reqres.in/api/";
 
@@ -11,7 +12,7 @@ const login = (username:string, password:string) => {
     })
     .then((response) => {
       if (response.data.token) {
-        localStorage.setItem("token", JSON.stringify(response.data));
+       tokenService.setUser(JSON.stringify(response.data));
       }
 
       return response.data;
@@ -19,7 +20,7 @@ const login = (username:string, password:string) => {
 };
 
 const logout = () => {
-  localStorage.removeItem("token");
+  tokenService.removeUser()
 };
 
 const authService = {
