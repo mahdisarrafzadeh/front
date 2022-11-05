@@ -10,6 +10,7 @@ export default function Home({ }: Props) {
     const dispatch: any = useDispatch()
     const handleLogout = () => {
         dispatch(logoutUser({}))
+        window.location.reload();
     }
 
     return (
