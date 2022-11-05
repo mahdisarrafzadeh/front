@@ -1,7 +1,7 @@
 import { Button } from 'antd';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../slice/token';
-import './index.css';
+import './index.less';
 
 
 type Props = {}
